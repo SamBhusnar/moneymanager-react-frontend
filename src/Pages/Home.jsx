@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import axiosConfig from "../Util/axiosConfig";
 import { API_ENDPOINTS } from "../Util/apiEndpoints";
 import RecentTransactions from "../Components/RecentTransactions";
-import FianancialOverview from "../Components/fiananceOverview";
+import FianancialOverview from "../Components/FiananceOverview";
 import Transactions from "../Components/Transactions";
 
 function Home() {
