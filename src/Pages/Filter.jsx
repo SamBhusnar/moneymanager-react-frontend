@@ -14,8 +14,8 @@ import moment from "moment";
 function Filter() {
   useUser();
   const [type, setType] = useState("Income");
-  const [startdate, setStartDate] = useState("");
-  const [enddate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [keyword, setKeyword] = useState("");
   const [sortFiled, setSortField] = useState("date");
   const [sortOrder, setSortOrder] = useState("asc");
@@ -33,8 +33,8 @@ function Filter() {
     try {
       const response = await axiosConfig.post(API_ENDPOINTS.apply_filters, {
         type,
-        startdate,
-        enddate,
+        startDate,    
+        endDate,
         keyword,
         sortFiled,
         sortOrder,
@@ -94,7 +94,7 @@ function Filter() {
                 Start Date
               </label>
               <input
-                value={startdate}
+                value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 className="w-full 
               border rounded px-3 py-2 bg-transparent outline-none  border border-gray-300 rounded-md py-2 px-3 text-gray-700  leading-tight focus:outline-none focus:border-blue-500"
@@ -111,7 +111,7 @@ function Filter() {
                 End Date
               </label>
               <input
-                value={enddate}
+                value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
                 className="w-full 
               border rounded px-3 py-2 bg-transparent outline-none  border border-gray-300 rounded-md py-2 px-3 text-gray-700  leading-tight focus:outline-none focus:border-blue-500"
