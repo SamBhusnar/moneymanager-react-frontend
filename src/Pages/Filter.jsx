@@ -14,8 +14,12 @@ import moment from "moment";
 function Filter() {
   useUser();
   const [type, setType] = useState("Income");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState(
+    moment(new Date().setDate(new Date().getDate() - 5)).format("YYYY-MM-DD")
+  );
+  const [endDate, setEndDate] = useState(
+    moment(new Date()).format("YYYY-MM-DD")
+  );
   const [keyword, setKeyword] = useState("");
   const [sortFiled, setSortField] = useState("date");
   const [sortOrder, setSortOrder] = useState("asc");
@@ -31,9 +35,12 @@ function Filter() {
     setLoading(true);
 
     try {
+      console.log("start date : -----------------", startDate);
+      console.log("end date : -----------------", endDate);
+
       const response = await axiosConfig.post(API_ENDPOINTS.apply_filters, {
         type,
-        startDate,    
+        startDate,
         endDate,
         keyword,
         sortFiled,
